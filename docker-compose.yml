@@ -1,0 +1,51 @@
+version: '3'
+
+networks:
+  errorhub_net:
+    ipam:
+      config:
+        - subnet: 192.168.110.0/24
+
+services:
+  backend:
+    image: backend
+    build:
+      context: .
+      dockerfile: ./dockerimage/servicio.dockerfile
+    restart: always
+    ports:
+    - "31050:5050"
+    env_file:
+    - ./variables.env
+    environment:
+      mongo_bdd: errorhub
+      mongo_bdd_server: mongo_data
+    networks:
+      errorhub_net:
+        ipv4_address: 192.168.110.10
+    links:
+    - mongo_data
+  mongo_data:
+    image: mongo:4.4.1
+    restart: always
+    volumes: 
+    - ./db/mongo_data:/data/db
+    env_file:
+    - ./variables.env
+    networks:
+      errorhub_net:
+        ipv4_address: 192.168.110.11
+  mongo_express:
+    image: mongo-express:latest
+    restart: always
+    ports:
+    - "31070:8081"
+    env_file:
+    - ./variables.env
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo_data
+    networks:
+      errorhub_net:
+        ipv4_address: 192.168.110.12
+    links:
+    - mongo_data
