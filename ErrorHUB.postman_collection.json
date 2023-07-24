@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "3bd514ef-93e8-4f39-9556-fc49c24caa9e",
+		"name": "ErrorHUB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4605417"
+	},
+	"item": [
+		{
+			"name": "upload_items",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBfbmFtZSI6IkVycm9ySHViIiwidmFsaWRfdW50aWwiOiIyMDI0LTA3LTIzIDEwOjUzOjU2Ljg2NzMwMSJ9.2UmVZVRtDshiafs8zWph1RIguF-s2dSrUcdXBMo-jTo",
+						"type": "text",
+						"id": 0
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"items\": [\r\n        {\"error\": \"el error es este\"},\r\n        {\"error\": \"el error es este\", \"usuario\": \"Luis Salazar\"},\r\n        {\"error\": \"el error es este\", \"usuario\": \"Luis Salazar\", \"modulo\": \"Compras\"}\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.101.54:31050/sir/upload_items",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"101",
+						"54"
+					],
+					"port": "31050",
+					"path": [
+						"sir",
+						"upload_items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBfbmFtZSI6IkVycm9ySHViIiwidmFsaWRfdW50aWwiOiIyMDI0LTA3LTIzIDEwOjUzOjU2Ljg2NzMwMSJ9.2UmVZVRtDshiafs8zWph1RIguF-s2dSrUcdXBMo-jTo",
+						"type": "text",
+						"id": 0
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"item_id\": \"b32f97c2-2b46-44ae-b4a6-80fa244f62c5\",\r\n    \"output_model\": {\"error\": 1}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.101.54:31050/sir/get_item",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"101",
+						"54"
+					],
+					"port": "31050",
+					"path": [
+						"sir",
+						"get_item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_items",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBfbmFtZSI6IkVycm9ySHViIiwidmFsaWRfdW50aWwiOiIyMDI0LTA3LTIzIDEwOjUzOjU2Ljg2NzMwMSJ9.2UmVZVRtDshiafs8zWph1RIguF-s2dSrUcdXBMo-jTo",
+						"type": "text",
+						"id": 0
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"output_model\": {\"error\": 1}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.101.54:31050/sir/get_items",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"101",
+						"54"
+					],
+					"port": "31050",
+					"path": [
+						"sir",
+						"get_items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBfbmFtZSI6IkVycm9ySHViIiwidmFsaWRfdW50aWwiOiIyMDI0LTA3LTIzIDEwOjUzOjU2Ljg2NzMwMSJ9.2UmVZVRtDshiafs8zWph1RIguF-s2dSrUcdXBMo-jTo",
+						"type": "text",
+						"id": 0
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"item_id\": \"b32f97c2-2b46-44ae-b4a6-80fa244f62c5\",\r\n    \"item\": {\"error\": \"nuevo error\",\r\n            \"usuario\": \"pepito grillo\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.101.54:31050/sir/update_item",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"101",
+						"54"
+					],
+					"port": "31050",
+					"path": [
+						"sir",
+						"update_item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_items",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBfbmFtZSI6IkVycm9ySHViIiwidmFsaWRfdW50aWwiOiIyMDI0LTA3LTIzIDEwOjUzOjU2Ljg2NzMwMSJ9.2UmVZVRtDshiafs8zWph1RIguF-s2dSrUcdXBMo-jTo",
+						"type": "text",
+						"id": 0
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"attribute\": \"error\",\r\n    \"value\": \"el error es este\",\r\n    \"output_model\": {\"error\": 1,\r\n            \"usuario\": 1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.101.54:31050/sir/search_items",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"101",
+						"54"
+					],
+					"port": "31050",
+					"path": [
+						"sir",
+						"search_items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBfbmFtZSI6IkVycm9ySHViIiwidmFsaWRfdW50aWwiOiIyMDI0LTA3LTIzIDEwOjUzOjU2Ljg2NzMwMSJ9.2UmVZVRtDshiafs8zWph1RIguF-s2dSrUcdXBMo-jTo",
+						"type": "text",
+						"id": 0
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"item_id\": \"b32f97c2-2b46-44ae-b4a6-80fa244f62c5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.101.54:31050/sir/delete_item",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"101",
+						"54"
+					],
+					"port": "31050",
+					"path": [
+						"sir",
+						"delete_item"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
